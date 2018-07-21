@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sang.mplayer">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".SearchActivity"
+            android:theme="@style/AppTheme.NoTitle">
+
+        </activity>
+        <activity android:name=".PlayerActivity" />
+
+        <!-- Content provider for favourite tracks -->
+
+        <provider
+            android:name=".data.TrackProvider"
+            android:authorities="@string/content_authority"
+            android:exported="false" />
+
+        <activity android:name=".FavActivity"
+            android:label="@string/title_activity_fav">
+
+        </activity>
+    </application>
+
+</manifest>
